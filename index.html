@@ -7,53 +7,114 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F0F8FF;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 450px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 320px;
-            max-height: 350px;
+        /* Reset and Base Styles */
+        *, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; }
+        html { line-height: 1.5; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; font-family: 'Inter', sans-serif; }
+        body { margin: 0; line-height: inherit; font-family: 'Inter', sans-serif; background-color: #F0F8FF; color: #374151; }
+        h1, h2, h3, h4, p, div, section, header, main, canvas { margin: 0; padding: 0; }
+        
+        /* Custom Styles from original file */
+        .chart-container { position: relative; width: 100%; max-width: 450px; margin-left: auto; margin-right: auto; height: 320px; max-height: 350px; }
+        @media (min-width: 768px) { .chart-container { height: 350px; max-height: 400px; } }
+        .flow-arrow::after { content: '→'; font-size: 2rem; line-height: 1; color: #00C2FF; margin: 0 1rem; }
+        .flow-arrow-down::after { content: '↓'; font-size: 2rem; line-height: 1; color: #00C2FF; }
+        .kpi-card { background-color: #004AAD; color: white; }
+        .kpi-number { font-size: 4rem; font-weight: 900; line-height: 1; color: #34E4EA; }
+        
+        /* Generated Tailwind CSS */
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-1 { margin-top: 0.25rem; }
+        .mr-4 { margin-right: 1rem; }
+        .pr-3 { padding-right: 0.75rem; }
+        .p-4 { padding: 1rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        .max-w-6xl { max-width: 72rem; }
+        .max-w-3xl { max-width: 48rem; }
+        .w-full { width: 100%; }
+        .w-auto { width: auto; }
+        .h-64 { height: 16rem; }
+        .h-8 { height: 2rem; }
+        .space-y-16 > :not([hidden]) ~ :not([hidden]) { margin-top: 4rem; }
+        .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem; }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .hidden { display: none; }
+        .grid { display: grid; }
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .items-center { align-items: center; }
+        .items-start { align-items: flex-start; }
+        .justify-center { justify-content: center; }
+        .justify-end { justify-content: flex-end; }
+        .gap-8 { gap: 2rem; }
+        .gap-6 { gap: 1.5rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-full { border-radius: 9999px; }
+        .bg-white { background-color: #fff; }
+        .bg-gray-50 { background-color: #f9fafb; }
+        .bg-gray-200 { background-color: #e5e7eb; }
+        .bg-blue-50 { background-color: #eff6ff; }
+        .bg-blue-100 { background-color: #dbeafe; }
+        .bg-red-100 { background-color: #fee2e2; }
+        .bg-green-100 { background-color: #dcfce7; }
+        .text-center { text-align: center; }
+        .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+        .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        .text-xs { font-size: 0.75rem; line-height: 1rem; }
+        .font-extrabold { font-weight: 800; }
+        .font-bold { font-weight: 700; }
+        .font-semibold { font-weight: 600; }
+        .text-white { color: #fff; }
+        .text-gray-500 { color: #6b7280; }
+        .text-gray-600 { color: #4b5563; }
+        .text-gray-800 { color: #1f2937; }
+        .text-blue-200 { color: #bfdbfe; }
+        .text-\[\#004AAD\] { color: #004AAD; }
+        .text-red-700 { color: #b91c1c; }
+        .text-green-700 { color: #15803d; }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
+        .bg-\[\#004AAD\] { background-color: #004AAD; }
+        .bg-\[\#00C2FF\] { background-color: #00C2FF; }
+
+        @media (min-width: 640px) {
+            .sm\:p-6 { padding: 1.5rem; }
+            .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
         @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-                max-height: 400px;
-            }
+            .md\:text-5xl { font-size: 3rem; line-height: 1; }
+            .md\:text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+            .md\:col-span-2 { grid-column: span 2 / span 2; }
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .md\:flex-row { flex-direction: row; }
+            .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) { margin-top: 0; }
+            .md\:space-x-4 > :not([hidden]) ~ :not([hidden]) { margin-left: 1rem; }
+            .md\:block { display: block; }
         }
-        .flow-arrow::after {
-            content: '→';
-            font-size: 2rem;
-            line-height: 1;
-            color: #00C2FF;
-            margin: 0 1rem;
-        }
-        .flow-arrow-down::after {
-            content: '↓';
-            font-size: 2rem;
-            line-height: 1;
-            color: #00C2FF;
-        }
-        .kpi-card {
-            background-color: #004AAD;
-            color: white;
-        }
-        .kpi-number {
-            font-size: 4rem;
-            font-weight: 900;
-            line-height: 1;
-            color: #34E4EA;
+        @media (min-width: 1024px) {
+            .lg\:p-8 { padding: 2rem; }
+            .lg\:col-span-1 { grid-column: span 1 / span 1; }
+            .lg\:col-span-2 { grid-column: span 2 / span 2; }
+            .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
         }
     </style>
 </head>
-<body class="text-gray-700">
+<body>
 
     <div class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
 
@@ -67,7 +128,7 @@
             <section id="before">
                 <div class="text-center mb-8 md:col-span-2">
                     <h2 class="text-3xl font-bold text-[#004AAD] mb-2">Part 1: The World Before the Medication</h2>
-                    <p class="max-w-3xl mx-auto text-gray-600">This phase is defined by a history of struggle, a cycle of hope and disappointment, and the profound emotional weight of chronic health conditions. Understanding this starting point is crucial for appreciating the hope with which a client approaches GLP-1 therapy.</p>
+                    <p class="max-w-3xl mx-auto">This phase is defined by a history of struggle, a cycle of hope and disappointment, and the profound emotional weight of chronic health conditions. Understanding this starting point is crucial for appreciating the hope with which a client approaches GLP-1 therapy.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
@@ -100,26 +161,26 @@
 
                 <div class="bg-white rounded-xl shadow-lg p-6 mt-8 md:col-span-2">
                     <h3 class="text-2xl font-bold text-[#004AAD] mb-6 text-center">The Path to a Prescription</h3>
-                    <p class="max-w-3xl mx-auto text-gray-600 text-center mb-8">Getting a prescription is a multi-step process filled with clinical checks, administrative hurdles, and significant waiting periods that can test a client's initial optimism.</p>
-                    <div class="flex flex-col md:flex-row justify-center items-center text-center space-y-4 md:space-y-0 md:space-x-4">
+                    <p class="max-w-3xl mx-auto text-center mb-8">Getting a prescription is a multi-step process filled with clinical checks, administrative hurdles, and significant waiting periods that can test a client's initial optimism.</p>
+                    <div class="flex flex-col md:flex-row justify-center items-center text-center md:space-x-4">
                         <div class="p-4 bg-blue-100 rounded-lg w-full md:w-auto">
                             <p class="font-bold text-lg text-[#004AAD]">1. Doctor Visit</p>
                             <p class="text-sm">Medical history review & BMI check.</p>
                         </div>
                         <div class="hidden md:block flow-arrow"></div>
-                        <div class="md:hidden flow-arrow-down mx-auto w-min"></div>
+                        <div class="md:hidden flow-arrow-down mx-auto w-min mb-4 mt-4"></div>
                         <div class="p-4 bg-blue-100 rounded-lg w-full md:w-auto">
                             <p class="font-bold text-lg text-[#004AAD]">2. Lab Work</p>
                             <p class="text-sm">Blood tests for metabolic, organ, & heart health.</p>
                         </div>
                         <div class="hidden md:block flow-arrow"></div>
-                        <div class="md:hidden flow-arrow-down mx-auto w-min"></div>
+                        <div class="md:hidden flow-arrow-down mx-auto w-min mb-4 mt-4"></div>
                         <div class="p-4 bg-red-100 rounded-lg w-full md:w-auto">
                             <p class="font-bold text-lg text-red-700">3. Insurance PA</p>
                             <p class="text-sm">Wait 7-14 days for prior authorization.</p>
                         </div>
                         <div class="hidden md:block flow-arrow"></div>
-                        <div class="md:hidden flow-arrow-down mx-auto w-min"></div>
+                        <div class="md:hidden flow-arrow-down mx-auto w-min mb-4 mt-4"></div>
                         <div class="p-4 bg-green-100 rounded-lg w-full md:w-auto">
                             <p class="font-bold text-lg text-green-700">4. Prescription</p>
                             <p class="text-sm">Medication can be picked up if approved.</p>
@@ -131,13 +192,13 @@
             <section id="during">
                 <div class="text-center mb-8 md:col-span-2">
                     <h2 class="text-3xl font-bold text-[#004AAD] mb-2">Part 2: Life on the Medication</h2>
-                    <p class="max-w-3xl mx-auto text-gray-600">This stage marks a period of profound physical and psychological transformation. The client's relationship with their body, food, and the world around them is fundamentally altered as they navigate side effects and build new lifestyle habits.</p>
+                    <p class="max-w-3xl mx-auto">This stage marks a period of profound physical and psychological transformation. The client's relationship with their body, food, and the world around them is fundamentally altered as they navigate side effects and build new lifestyle habits.</p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                     <div class="bg-white rounded-xl shadow-lg p-6">
                         <h3 class="text-2xl font-bold text-[#004AAD] mb-4 text-center">Navigating the Adjustment Period</h3>
-                         <p class="text-center text-gray-600 mb-6">Initial side effects are common as the body adapts. These are often signs the medication is working, but require careful management.</p>
+                         <p class="text-center mb-6">Initial side effects are common as the body adapts. These are often signs the medication is working, but require careful management.</p>
                         <div class="chart-container">
                             <canvas id="sideEffectsChart"></canvas>
                         </div>
@@ -145,7 +206,7 @@
 
                     <div class="bg-white rounded-xl shadow-lg p-6">
                         <h3 class="text-2xl font-bold text-[#004AAD] mb-6 text-center">The "Miracle" Behind the Work</h3>
-                        <p class="text-center text-gray-600 mb-6">The medication quiets the "food noise," creating a window of opportunity. Success depends on building lasting habits within this window.</p>
+                        <p class="text-center mb-6">The medication quiets the "food noise," creating a window of opportunity. Success depends on building lasting habits within this window.</p>
                          <div class="space-y-4">
                             <div class="flex items-start p-4 bg-gray-50 rounded-lg">
                                 <span class="text-3xl mr-4">🥩</span>
@@ -176,13 +237,13 @@
             <section id="after">
                 <div class="text-center mb-8 md:col-span-2">
                     <h2 class="text-3xl font-bold text-[#004AAD] mb-2">Part 3: Life After the Medication</h2>
-                    <p class="max-w-3xl mx-auto text-gray-600">This is the most critical phase. The pharmacological support is gone, and the client must rely on the habits and resilience built during treatment. This is where long-term success is determined.</p>
+                    <p class="max-w-3xl mx-auto">This is the most critical phase. The pharmacological support is gone, and the client must rely on the habits and resilience built during treatment. This is where long-term success is determined.</p>
                 </div>
 
                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                     <div class="bg-white rounded-xl shadow-lg p-6">
                         <h3 class="text-2xl font-bold text-[#004AAD] mb-4 text-center">Why Do Clients Stop Taking GLP-1s?</h3>
-                        <p class="text-center text-gray-600 mb-6">Discontinuation is common, often due to factors outside the client's control like cost and side effects, making the rebound even more frustrating.</p>
+                        <p class="text-center mb-6">Discontinuation is common, often due to factors outside the client's control like cost and side effects, making the rebound even more frustrating.</p>
                         <div class="chart-container">
                             <canvas id="discontinuationChart"></canvas>
                         </div>
@@ -190,7 +251,7 @@
 
                     <div class="bg-white rounded-xl shadow-lg p-6 text-center">
                         <h3 class="text-2xl font-bold text-[#004AAD] mb-4">The Biological Rebound is Real</h3>
-                        <p class="text-gray-600 mb-6">Stopping the medication triggers a predictable biological response. The return of appetite is intense, and weight regain is a probability, not a personal failure.</p>
+                        <p class="mb-6">Stopping the medication triggers a predictable biological response. The return of appetite is intense, and weight regain is a probability, not a personal failure.</p>
                         <div class="w-full bg-gray-200 rounded-full h-8 mb-2">
                              <div class="bg-[#004AAD] h-8 rounded-full flex items-center justify-end" style="width: 100%">
                                 <span class="pr-3 font-bold text-white">100% Weight Lost</span>
@@ -207,7 +268,7 @@
 
                 <div class="bg-white rounded-xl shadow-lg p-8 mt-8 md:col-span-2">
                      <h3 class="text-2xl font-bold text-[#004AAD] mb-6 text-center">The Blueprint for Sustainable Success</h3>
-                     <p class="max-w-3xl mx-auto text-gray-600 text-center mb-8">Long-term success depends entirely on the strength of the habits built while on the medication. This behavioral scaffolding is the key to withstanding the biological storm of the rebound phase.</p>
+                     <p class="max-w-3xl mx-auto text-center mb-8">Long-term success depends entirely on the strength of the habits built while on the medication. This behavioral scaffolding is the key to withstanding the biological storm of the rebound phase.</p>
                      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
                         <div class="bg-blue-50 p-4 rounded-lg">
                             <h4 class="font-bold text-lg text-[#004AAD]">Nutritional Defense</h4>
