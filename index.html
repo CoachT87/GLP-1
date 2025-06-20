@@ -1,380 +1,372 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww37900\viewh17840\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The GLP-1 Client Journey: An Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F8FF;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 350px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+                max-height: 400px;
+            }
+        }
+        .flow-arrow::after {
+            content: '→';
+            font-size: 2rem;
+            line-height: 1;
+            color: #00C2FF;
+            margin: 0 1rem;
+        }
+        .flow-arrow-down::after {
+            content: '↓';
+            font-size: 2rem;
+            line-height: 1;
+            color: #00C2FF;
+        }
+        .kpi-card {
+            background-color: #004AAD;
+            color: white;
+        }
+        .kpi-number {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+            color: #34E4EA;
+        }
+    </style>
+</head>
+<body class="text-gray-700">
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="en">\
-<head>\
-    <meta charset="UTF-8">\
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-    <title>The GLP-1 Client Journey: An Infographic</title>\
-    <script src="https://cdn.tailwindcss.com"></script>\
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>\
-    <link rel="preconnect" href="https://fonts.googleapis.com">\
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">\
-    <style>\
-        body \{\
-            font-family: 'Inter', sans-serif;\
-            background-color: #F0F8FF;\
-        \}\
-        .chart-container \{\
-            position: relative;\
-            width: 100%;\
-            max-width: 450px;\
-            margin-left: auto;\
-            margin-right: auto;\
-            height: 320px;\
-            max-height: 350px;\
-        \}\
-        @media (min-width: 768px) \{\
-            .chart-container \{\
-                height: 350px;\
-                max-height: 400px;\
-            \}\
-        \}\
-        .flow-arrow::after \{\
-            content: '\uc0\u8594 ';\
-            font-size: 2rem;\
-            line-height: 1;\
-            color: #00C2FF;\
-            margin: 0 1rem;\
-        \}\
-        .flow-arrow-down::after \{\
-            content: '\uc0\u8595 ';\
-            font-size: 2rem;\
-            line-height: 1;\
-            color: #00C2FF;\
-        \}\
-        .kpi-card \{\
-            background-color: #004AAD;\
-            color: white;\
-        \}\
-        .kpi-number \{\
-            font-size: 4rem;\
-            font-weight: 900;\
-            line-height: 1;\
-            color: #34E4EA;\
-        \}\
-    </style>\
-</head>\
-<body class="text-gray-700">\
-\
-    <div class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">\
-\
-        <header class="text-center mb-12">\
-            <h1 class="text-4xl md:text-5xl font-extrabold text-[#004AAD] mb-2">The GLP-1 Client Journey</h1>\
-            <p class="text-lg md:text-xl text-gray-600">A visual guide to the experience before, during, and after medication.</p>\
-        </header>\
-\
-        <main class="space-y-16">\
-\
-            <section id="before">\
-                <div class="text-center mb-8 md:col-span-2">\
-                    <h2 class="text-3xl font-bold text-[#004AAD] mb-2">Part 1: The World Before the Medication</h2>\
-                    <p class="max-w-3xl mx-auto text-gray-600">This phase is defined by a history of struggle, a cycle of hope and disappointment, and the profound emotional weight of chronic health conditions. Understanding this starting point is crucial for appreciating the hope with which a client approaches GLP-1 therapy.</p>\
-                </div>\
-\
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">\
-                    \
-                    <div class="bg-white rounded-xl shadow-lg p-6 text-center lg:col-span-1">\
-                        <h3 class="text-xl font-bold text-[#004AAD] mb-4">The Weight of "Diabetes Distress"</h3>\
-                        <p class="mb-4 text-sm">A significant number of people with diabetes feel overwhelmed and frustrated by the daily demands of managing their condition, impacting self-care.</p>\
-                        <div class="chart-container h-64">\
-                            <canvas id="distressChart"></canvas>\
-                        </div>\
-                        <p class="mt-4 text-xs text-gray-500">Source: Affects 33% to 50% of people with diabetes over an 18-month period.</p>\
-                    </div>\
-\
-                    <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">\
-                        <div class="kpi-card rounded-xl shadow-lg p-6 flex flex-col justify-center text-center">\
-                            <h3 class="text-xl font-semibold mb-2 text-white">A New Hope</h3>\
-                            <p class="kpi-number">15-20%</p>\
-                            <p class="font-semibold mt-2">Potential Weight Loss</p>\
-                            <p class="text-sm mt-1 text-blue-200">GLP-1s offer results far exceeding what is typically achievable with lifestyle changes alone.</p>\
-                        </div>\
-\
-                         <div class="kpi-card rounded-xl shadow-lg p-6 flex flex-col justify-center text-center">\
-                            <h3 class="text-xl font-semibold mb-2 text-white">The Financial Hurdle</h3>\
-                            <p class="kpi-number">&gt;$1.3k</p>\
-                            <p class="font-semibold mt-2">Per Month Out-of-Pocket</p>\
-                            <p class="text-sm mt-1 text-blue-200">High costs make insurance coverage and prior authorizations a critical and stressful step.</p>\
-                        </div>\
-                    </div>\
-                </div>\
-\
-                <div class="bg-white rounded-xl shadow-lg p-6 mt-8 md:col-span-2">\
-                    <h3 class="text-2xl font-bold text-[#004AAD] mb-6 text-center">The Path to a Prescription</h3>\
-                    <p class="max-w-3xl mx-auto text-gray-600 text-center mb-8">Getting a prescription is a multi-step process filled with clinical checks, administrative hurdles, and significant waiting periods that can test a client's initial optimism.</p>\
-                    <div class="flex flex-col md:flex-row justify-center items-center text-center space-y-4 md:space-y-0 md:space-x-4">\
-                        <div class="p-4 bg-blue-100 rounded-lg w-full md:w-auto">\
-                            <p class="font-bold text-lg text-[#004AAD]">1. Doctor Visit</p>\
-                            <p class="text-sm">Medical history review & BMI check.</p>\
-                        </div>\
-                        <div class="hidden md:block flow-arrow"></div>\
-                        <div class="md:hidden flow-arrow-down mx-auto w-min"></div>\
-                        <div class="p-4 bg-blue-100 rounded-lg w-full md:w-auto">\
-                            <p class="font-bold text-lg text-[#004AAD]">2. Lab Work</p>\
-                            <p class="text-sm">Blood tests for metabolic, organ, & heart health.</p>\
-                        </div>\
-                        <div class="hidden md:block flow-arrow"></div>\
-                        <div class="md:hidden flow-arrow-down mx-auto w-min"></div>\
-                        <div class="p-4 bg-red-100 rounded-lg w-full md:w-auto">\
-                            <p class="font-bold text-lg text-red-700">3. Insurance PA</p>\
-                            <p class="text-sm">Wait 7-14 days for prior authorization.</p>\
-                        </div>\
-                        <div class="hidden md:block flow-arrow"></div>\
-                        <div class="md:hidden flow-arrow-down mx-auto w-min"></div>\
-                        <div class="p-4 bg-green-100 rounded-lg w-full md:w-auto">\
-                            <p class="font-bold text-lg text-green-700">4. Prescription</p>\
-                            <p class="text-sm">Medication can be picked up if approved.</p>\
-                        </div>\
-                    </div>\
-                </div>\
-            </section>\
-\
-            <section id="during">\
-                <div class="text-center mb-8 md:col-span-2">\
-                    <h2 class="text-3xl font-bold text-[#004AAD] mb-2">Part 2: Life on the Medication</h2>\
-                    <p class="max-w-3xl mx-auto text-gray-600">This stage marks a period of profound physical and psychological transformation. The client's relationship with their body, food, and the world around them is fundamentally altered as they navigate side effects and build new lifestyle habits.</p>\
-                </div>\
-\
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">\
-                    <div class="bg-white rounded-xl shadow-lg p-6">\
-                        <h3 class="text-2xl font-bold text-[#004AAD] mb-4 text-center">Navigating the Adjustment Period</h3>\
-                         <p class="text-center text-gray-600 mb-6">Initial side effects are common as the body adapts. These are often signs the medication is working, but require careful management.</p>\
-                        <div class="chart-container">\
-                            <canvas id="sideEffectsChart"></canvas>\
-                        </div>\
-                    </div>\
-\
-                    <div class="bg-white rounded-xl shadow-lg p-6">\
-                        <h3 class="text-2xl font-bold text-[#004AAD] mb-6 text-center">The "Miracle" Behind the Work</h3>\
-                        <p class="text-center text-gray-600 mb-6">The medication quiets the "food noise," creating a window of opportunity. Success depends on building lasting habits within this window.</p>\
-                         <div class="space-y-4">\
-                            <div class="flex items-start p-4 bg-gray-50 rounded-lg">\
-                                <span class="text-3xl mr-4">\uc0\u55358 \u56681 </span>\
-                                <div>\
-                                    <h4 class="font-bold text-lg text-[#004AAD]">Prioritize Protein</h4>\
-                                    <p class="text-sm">Consume 60-80g daily to preserve muscle mass and keep metabolism high.</p>\
-                                </div>\
-                            </div>\
-                            <div class="flex items-start p-4 bg-gray-50 rounded-lg">\
-                                <span class="text-3xl mr-4">\uc0\u55356 \u57291 \u65039 </span>\
-                                <div>\
-                                    <h4 class="font-bold text-lg text-[#004AAD]">Strength Train</h4>\
-                                    <p class="text-sm">2-3 sessions per week are non-negotiable to build metabolically active muscle.</p>\
-                                </div>\
-                            </div>\
-                            <div class="flex items-start p-4 bg-gray-50 rounded-lg">\
-                                <span class="text-3xl mr-4">\uc0\u55357 \u56487 </span>\
-                                <div>\
-                                    <h4 class="font-bold text-lg text-[#004AAD]">Hydrate Intentionally</h4>\
-                                    <p class="text-sm">Aim for 2-3 liters daily as thirst signals may be suppressed. Crucial for managing side effects.</p>\
-                                </div>\
-                            </div>\
-                        </div>\
-                    </div>\
-                </div>\
-            </section>\
-            \
-            <section id="after">\
-                <div class="text-center mb-8 md:col-span-2">\
-                    <h2 class="text-3xl font-bold text-[#004AAD] mb-2">Part 3: Life After the Medication</h2>\
-                    <p class="max-w-3xl mx-auto text-gray-600">This is the most critical phase. The pharmacological support is gone, and the client must rely on the habits and resilience built during treatment. This is where long-term success is determined.</p>\
-                </div>\
-\
-                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">\
-                    <div class="bg-white rounded-xl shadow-lg p-6">\
-                        <h3 class="text-2xl font-bold text-[#004AAD] mb-4 text-center">Why Do Clients Stop Taking GLP-1s?</h3>\
-                        <p class="text-center text-gray-600 mb-6">Discontinuation is common, often due to factors outside the client's control like cost and side effects, making the rebound even more frustrating.</p>\
-                        <div class="chart-container">\
-                            <canvas id="discontinuationChart"></canvas>\
-                        </div>\
-                    </div>\
-\
-                    <div class="bg-white rounded-xl shadow-lg p-6 text-center">\
-                        <h3 class="text-2xl font-bold text-[#004AAD] mb-4">The Biological Rebound is Real</h3>\
-                        <p class="text-gray-600 mb-6">Stopping the medication triggers a predictable biological response. The return of appetite is intense, and weight regain is a probability, not a personal failure.</p>\
-                        <div class="w-full bg-gray-200 rounded-full h-8 mb-2">\
-                             <div class="bg-[#004AAD] h-8 rounded-full flex items-center justify-end" style="width: 100%">\
-                                <span class="pr-3 font-bold text-white">100% Weight Lost</span>\
-                            </div>\
-                        </div>\
-                        <div class="w-full bg-gray-200 rounded-full h-8">\
-                            <div class="bg-[#00C2FF] h-8 rounded-full flex items-center justify-end" style="width: 67%">\
-                                <span class="pr-3 font-bold text-gray-800">~67% Regained (in 1 Year)</span>\
-                            </div>\
-                        </div>\
-                        <p class="mt-4 text-xs text-gray-500">Source: Clinical studies on post-medication outcomes.</p>\
-                    </div>\
-                </div>\
-\
-                <div class="bg-white rounded-xl shadow-lg p-8 mt-8 md:col-span-2">\
-                     <h3 class="text-2xl font-bold text-[#004AAD] mb-6 text-center">The Blueprint for Sustainable Success</h3>\
-                     <p class="max-w-3xl mx-auto text-gray-600 text-center mb-8">Long-term success depends entirely on the strength of the habits built while on the medication. This behavioral scaffolding is the key to withstanding the biological storm of the rebound phase.</p>\
-                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">\
-                        <div class="bg-blue-50 p-4 rounded-lg">\
-                            <h4 class="font-bold text-lg text-[#004AAD]">Nutritional Defense</h4>\
-                            <p class="text-sm">Plan high-protein, high-fiber meals to manage the returning "food noise".</p>\
-                        </div>\
-                        <div class="bg-blue-50 p-4 rounded-lg">\
-                            <h4 class="font-bold text-lg text-[#004AAD]">Metabolic Support</h4>\
-                            <p class="text-sm">Maintain consistent exercise, especially strength training, to fight metabolic slowdown.</p>\
-                        </div>\
-                        <div class="bg-blue-50 p-4 rounded-lg">\
-                            <h4 class="font-bold text-lg text-[#004AAD]">Emotional Armor</h4>\
-                            <p class="text-sm">Develop non-food coping strategies and challenge all-or-nothing thinking.</p>\
-                        </div>\
-                         <div class="bg-blue-50 p-4 rounded-lg">\
-                            <h4 class="font-bold text-lg text-[#004AAD]">Proactive Monitoring</h4>\
-                            <p class="text-sm">Use structured routines and regular check-ins to catch slips before they become slides.</p>\
-                        </div>\
-                     </div>\
-                </div>\
-            </section>\
-        </main>\
-    </div>\
-\
-    <script>\
-        const brilliantBlues = \{\
-            deepBlue: '#004AAD',\
-            brightBlue: '#00C2FF',\
-            cyan: '#34E4EA',\
-            lightCyan: '#B8F2FE',\
-            white: '#FFFFFF'\
-        \};\
-\
-        function formatLabel(str, maxLen = 16) \{\
-            if (str.length <= maxLen) return str;\
-            const words = str.split(' ');\
-            const lines = [];\
-            let currentLine = '';\
-            for (const word of words) \{\
-                if ((currentLine + ' ' + word).trim().length > maxLen && currentLine.length > 0) \{\
-                    lines.push(currentLine);\
-                    currentLine = word;\
-                \} else \{\
-                    currentLine = (currentLine + ' ' + word).trim();\
-                \}\
-            \}\
-            if (currentLine.length > 0) \{\
-                lines.push(currentLine);\
-            \}\
-            return lines;\
-        \}\
-\
-        const tooltipTitleCallback = \{\
-            plugins: \{\
-                tooltip: \{\
-                    callbacks: \{\
-                        title: function(tooltipItems) \{\
-                            const item = tooltipItems[0];\
-                            let label = item.chart.data.labels[item.dataIndex];\
-                            if (Array.isArray(label)) \{\
-                              return label.join(' ');\
-                            \} else \{\
-                              return label;\
-                            \}\
-                        \}\
-                    \}\
-                \},\
-                legend: \{\
-                    position: 'bottom',\
-                    labels: \{\
-                        padding: 20\
-                    \}\
-                \}\
-            \}\
-        \};\
-\
-        const distressChartCtx = document.getElementById('distressChart').getContext('2d');\
-        new Chart(distressChartCtx, \{\
-            type: 'doughnut',\
-            data: \{\
-                labels: ['Experience Distress', 'Do Not'],\
-                datasets: [\{\
-                    label: 'Diabetes Distress',\
-                    data: [42, 58],\
-                    backgroundColor: [brilliantBlues.deepBlue, brilliantBlues.lightCyan],\
-                    borderColor: brilliantBlues.white,\
-                    borderWidth: 4,\
-                    hoverOffset: 8\
-                \}]\
-            \},\
-            options: \{\
-                responsive: true,\
-                maintainAspectRatio: false,\
-                cutout: '70%',\
-                ...tooltipTitleCallback\
-            \}\
-        \});\
-\
-        const sideEffectsChartCtx = document.getElementById('sideEffectsChart').getContext('2d');\
-        const sideEffectsLabels = ['Nausea', 'Diarrhea', 'Constipation', 'Vomiting', 'Bloating'];\
-        new Chart(sideEffectsChartCtx, \{\
-            type: 'bar',\
-            data: \{\
-                labels: sideEffectsLabels,\
-                datasets: [\{\
-                    label: 'Frequency of Common Side Effects',\
-                    data: [45, 30, 25, 20, 15],\
-                    backgroundColor: [brilliantBlues.deepBlue, brilliantBlues.brightBlue, brilliantBlues.cyan, '#67E8F9', brilliantBlues.lightCyan],\
-                    borderRadius: 4\
-                \}]\
-            \},\
-            options: \{\
-                responsive: true,\
-                maintainAspectRatio: false,\
-                indexAxis: 'y',\
-                scales: \{\
-                    x: \{\
-                        beginAtZero: true,\
-                        title: \{ display: true, text: '% of Patients Reporting' \}\
-                    \}\
-                \},\
-                plugins: \{\
-                    tooltip: \{\
-                        callbacks: \{\
-                            title: function(tooltipItems) \{\
-                                const item = tooltipItems[0];\
-                                let label = item.chart.data.labels[item.dataIndex];\
-                                if (Array.isArray(label)) \{ return label.join(' '); \} \
-                                else \{ return label; \}\
-                            \}\
-                        \}\
-                    \},\
-                    legend: \{ display: false \}\
-                \}\
-            \}\
-        \});\
-        \
-        const discontinuationChartCtx = document.getElementById('discontinuationChart').getContext('2d');\
-        const discontinuationLabels = ['Intolerable Side Effects', 'Cost or Insurance Loss', 'Medication Shortages', 'Reached Goal Weight'];\
-        new Chart(discontinuationChartCtx, \{\
-            type: 'pie',\
-            data: \{\
-                labels: discontinuationLabels.map(label => formatLabel(label)),\
-                datasets: [\{\
-                    label: 'Reasons for Discontinuation',\
-                    data: [40, 35, 15, 10],\
-                    backgroundColor: [brilliantBlues.deepBlue, brilliantBlues.brightBlue, brilliantBlues.cyan, brilliantBlues.lightCyan],\
-                    borderColor: brilliantBlues.white,\
-                    borderWidth: 4,\
-                    hoverOffset: 8\
-                \}]\
-            \},\
-            options: \{\
-                responsive: true,\
-                maintainAspectRatio: false,\
-                ...tooltipTitleCallback\
-            \}\
-        \});\
-\
-    </script>\
-</body>\
-</html>\
-}
+    <div class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#004AAD] mb-2">The GLP-1 Client Journey</h1>
+            <p class="text-lg md:text-xl text-gray-600">A visual guide to the experience before, during, and after medication.</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="before">
+                <div class="text-center mb-8 md:col-span-2">
+                    <h2 class="text-3xl font-bold text-[#004AAD] mb-2">Part 1: The World Before the Medication</h2>
+                    <p class="max-w-3xl mx-auto text-gray-600">This phase is defined by a history of struggle, a cycle of hope and disappointment, and the profound emotional weight of chronic health conditions. Understanding this starting point is crucial for appreciating the hope with which a client approaches GLP-1 therapy.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center lg:col-span-1">
+                        <h3 class="text-xl font-bold text-[#004AAD] mb-4">The Weight of "Diabetes Distress"</h3>
+                        <p class="mb-4 text-sm">A significant number of people with diabetes feel overwhelmed and frustrated by the daily demands of managing their condition, impacting self-care.</p>
+                        <div class="chart-container h-64">
+                            <canvas id="distressChart"></canvas>
+                        </div>
+                        <p class="mt-4 text-xs text-gray-500">Source: Affects 33% to 50% of people with diabetes over an 18-month period.</p>
+                    </div>
+
+                    <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div class="kpi-card rounded-xl shadow-lg p-6 flex flex-col justify-center text-center">
+                            <h3 class="text-xl font-semibold mb-2 text-white">A New Hope</h3>
+                            <p class="kpi-number">15-20%</p>
+                            <p class="font-semibold mt-2">Potential Weight Loss</p>
+                            <p class="text-sm mt-1 text-blue-200">GLP-1s offer results far exceeding what is typically achievable with lifestyle changes alone.</p>
+                        </div>
+
+                         <div class="kpi-card rounded-xl shadow-lg p-6 flex flex-col justify-center text-center">
+                            <h3 class="text-xl font-semibold mb-2 text-white">The Financial Hurdle</h3>
+                            <p class="kpi-number">&gt;$1.3k</p>
+                            <p class="font-semibold mt-2">Per Month Out-of-Pocket</p>
+                            <p class="text-sm mt-1 text-blue-200">High costs make insurance coverage and prior authorizations a critical and stressful step.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 mt-8 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-[#004AAD] mb-6 text-center">The Path to a Prescription</h3>
+                    <p class="max-w-3xl mx-auto text-gray-600 text-center mb-8">Getting a prescription is a multi-step process filled with clinical checks, administrative hurdles, and significant waiting periods that can test a client's initial optimism.</p>
+                    <div class="flex flex-col md:flex-row justify-center items-center text-center space-y-4 md:space-y-0 md:space-x-4">
+                        <div class="p-4 bg-blue-100 rounded-lg w-full md:w-auto">
+                            <p class="font-bold text-lg text-[#004AAD]">1. Doctor Visit</p>
+                            <p class="text-sm">Medical history review & BMI check.</p>
+                        </div>
+                        <div class="hidden md:block flow-arrow"></div>
+                        <div class="md:hidden flow-arrow-down mx-auto w-min"></div>
+                        <div class="p-4 bg-blue-100 rounded-lg w-full md:w-auto">
+                            <p class="font-bold text-lg text-[#004AAD]">2. Lab Work</p>
+                            <p class="text-sm">Blood tests for metabolic, organ, & heart health.</p>
+                        </div>
+                        <div class="hidden md:block flow-arrow"></div>
+                        <div class="md:hidden flow-arrow-down mx-auto w-min"></div>
+                        <div class="p-4 bg-red-100 rounded-lg w-full md:w-auto">
+                            <p class="font-bold text-lg text-red-700">3. Insurance PA</p>
+                            <p class="text-sm">Wait 7-14 days for prior authorization.</p>
+                        </div>
+                        <div class="hidden md:block flow-arrow"></div>
+                        <div class="md:hidden flow-arrow-down mx-auto w-min"></div>
+                        <div class="p-4 bg-green-100 rounded-lg w-full md:w-auto">
+                            <p class="font-bold text-lg text-green-700">4. Prescription</p>
+                            <p class="text-sm">Medication can be picked up if approved.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="during">
+                <div class="text-center mb-8 md:col-span-2">
+                    <h2 class="text-3xl font-bold text-[#004AAD] mb-2">Part 2: Life on the Medication</h2>
+                    <p class="max-w-3xl mx-auto text-gray-600">This stage marks a period of profound physical and psychological transformation. The client's relationship with their body, food, and the world around them is fundamentally altered as they navigate side effects and build new lifestyle habits.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-2xl font-bold text-[#004AAD] mb-4 text-center">Navigating the Adjustment Period</h3>
+                         <p class="text-center text-gray-600 mb-6">Initial side effects are common as the body adapts. These are often signs the medication is working, but require careful management.</p>
+                        <div class="chart-container">
+                            <canvas id="sideEffectsChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-2xl font-bold text-[#004AAD] mb-6 text-center">The "Miracle" Behind the Work</h3>
+                        <p class="text-center text-gray-600 mb-6">The medication quiets the "food noise," creating a window of opportunity. Success depends on building lasting habits within this window.</p>
+                         <div class="space-y-4">
+                            <div class="flex items-start p-4 bg-gray-50 rounded-lg">
+                                <span class="text-3xl mr-4">🥩</span>
+                                <div>
+                                    <h4 class="font-bold text-lg text-[#004AAD]">Prioritize Protein</h4>
+                                    <p class="text-sm">Consume 60-80g daily to preserve muscle mass and keep metabolism high.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start p-4 bg-gray-50 rounded-lg">
+                                <span class="text-3xl mr-4">🏋️</span>
+                                <div>
+                                    <h4 class="font-bold text-lg text-[#004AAD]">Strength Train</h4>
+                                    <p class="text-sm">2-3 sessions per week are non-negotiable to build metabolically active muscle.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start p-4 bg-gray-50 rounded-lg">
+                                <span class="text-3xl mr-4">💧</span>
+                                <div>
+                                    <h4 class="font-bold text-lg text-[#004AAD]">Hydrate Intentionally</h4>
+                                    <p class="text-sm">Aim for 2-3 liters daily as thirst signals may be suppressed. Crucial for managing side effects.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="after">
+                <div class="text-center mb-8 md:col-span-2">
+                    <h2 class="text-3xl font-bold text-[#004AAD] mb-2">Part 3: Life After the Medication</h2>
+                    <p class="max-w-3xl mx-auto text-gray-600">This is the most critical phase. The pharmacological support is gone, and the client must rely on the habits and resilience built during treatment. This is where long-term success is determined.</p>
+                </div>
+
+                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-2xl font-bold text-[#004AAD] mb-4 text-center">Why Do Clients Stop Taking GLP-1s?</h3>
+                        <p class="text-center text-gray-600 mb-6">Discontinuation is common, often due to factors outside the client's control like cost and side effects, making the rebound even more frustrating.</p>
+                        <div class="chart-container">
+                            <canvas id="discontinuationChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+                        <h3 class="text-2xl font-bold text-[#004AAD] mb-4">The Biological Rebound is Real</h3>
+                        <p class="text-gray-600 mb-6">Stopping the medication triggers a predictable biological response. The return of appetite is intense, and weight regain is a probability, not a personal failure.</p>
+                        <div class="w-full bg-gray-200 rounded-full h-8 mb-2">
+                             <div class="bg-[#004AAD] h-8 rounded-full flex items-center justify-end" style="width: 100%">
+                                <span class="pr-3 font-bold text-white">100% Weight Lost</span>
+                            </div>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-8">
+                            <div class="bg-[#00C2FF] h-8 rounded-full flex items-center justify-end" style="width: 67%">
+                                <span class="pr-3 font-bold text-gray-800">~67% Regained (in 1 Year)</span>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-xs text-gray-500">Source: Clinical studies on post-medication outcomes.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 mt-8 md:col-span-2">
+                     <h3 class="text-2xl font-bold text-[#004AAD] mb-6 text-center">The Blueprint for Sustainable Success</h3>
+                     <p class="max-w-3xl mx-auto text-gray-600 text-center mb-8">Long-term success depends entirely on the strength of the habits built while on the medication. This behavioral scaffolding is the key to withstanding the biological storm of the rebound phase.</p>
+                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-[#004AAD]">Nutritional Defense</h4>
+                            <p class="text-sm">Plan high-protein, high-fiber meals to manage the returning "food noise".</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-[#004AAD]">Metabolic Support</h4>
+                            <p class="text-sm">Maintain consistent exercise, especially strength training, to fight metabolic slowdown.</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-[#004AAD]">Emotional Armor</h4>
+                            <p class="text-sm">Develop non-food coping strategies and challenge all-or-nothing thinking.</p>
+                        </div>
+                         <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-[#004AAD]">Proactive Monitoring</h4>
+                            <p class="text-sm">Use structured routines and regular check-ins to catch slips before they become slides.</p>
+                        </div>
+                     </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const brilliantBlues = {
+            deepBlue: '#004AAD',
+            brightBlue: '#00C2FF',
+            cyan: '#34E4EA',
+            lightCyan: '#B8F2FE',
+            white: '#FFFFFF'
+        };
+
+        function formatLabel(str, maxLen = 16) {
+            if (str.length <= maxLen) return str;
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLen && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine.length > 0) {
+                lines.push(currentLine);
+            }
+            return lines;
+        }
+
+        const tooltipTitleCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                },
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20
+                    }
+                }
+            }
+        };
+
+        const distressChartCtx = document.getElementById('distressChart').getContext('2d');
+        new Chart(distressChartCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Experience Distress', 'Do Not'],
+                datasets: [{
+                    label: 'Diabetes Distress',
+                    data: [42, 58],
+                    backgroundColor: [brilliantBlues.deepBlue, brilliantBlues.lightCyan],
+                    borderColor: brilliantBlues.white,
+                    borderWidth: 4,
+                    hoverOffset: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                ...tooltipTitleCallback
+            }
+        });
+
+        const sideEffectsChartCtx = document.getElementById('sideEffectsChart').getContext('2d');
+        const sideEffectsLabels = ['Nausea', 'Diarrhea', 'Constipation', 'Vomiting', 'Bloating'];
+        new Chart(sideEffectsChartCtx, {
+            type: 'bar',
+            data: {
+                labels: sideEffectsLabels,
+                datasets: [{
+                    label: 'Frequency of Common Side Effects',
+                    data: [45, 30, 25, 20, 15],
+                    backgroundColor: [brilliantBlues.deepBlue, brilliantBlues.brightBlue, brilliantBlues.cyan, '#67E8F9', brilliantBlues.lightCyan],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: { display: true, text: '% of Patients Reporting' }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) { return label.join(' '); } 
+                                else { return label; }
+                            }
+                        }
+                    },
+                    legend: { display: false }
+                }
+            }
+        });
+        
+        const discontinuationChartCtx = document.getElementById('discontinuationChart').getContext('2d');
+        const discontinuationLabels = ['Intolerable Side Effects', 'Cost or Insurance Loss', 'Medication Shortages', 'Reached Goal Weight'];
+        new Chart(discontinuationChartCtx, {
+            type: 'pie',
+            data: {
+                labels: discontinuationLabels.map(label => formatLabel(label)),
+                datasets: [{
+                    label: 'Reasons for Discontinuation',
+                    data: [40, 35, 15, 10],
+                    backgroundColor: [brilliantBlues.deepBlue, brilliantBlues.brightBlue, brilliantBlues.cyan, brilliantBlues.lightCyan],
+                    borderColor: brilliantBlues.white,
+                    borderWidth: 4,
+                    hoverOffset: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...tooltipTitleCallback
+            }
+        });
+
+    </script>
+</body>
+</html>
